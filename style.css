@@ -74,6 +74,7 @@ HEADER
 ---------- */
 
 .header {
+    position: relative;
     background: rgba(50, 50, 50, 0.7);
     backdrop-filter: blur(10px);
     padding: 20px 0;
@@ -107,45 +108,55 @@ HEADER
 burger menu
 ---------- */
 .menu-icon {
-    width: 40px;
-    height: 30px;
-    position: relative;
-    background: transparent; /* убирает белый фон */
-    border: none;    
+  position: absolute;
+  top: 25px;
+  right: 20px;
+  width: 30px;
+  height: 22px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: none; /* по умолчанию скрыта, показывается в media */
 }
-.menu-icon::after, .menu-icon::before {
-    content: "";
-    position: absolute;
-    left: 0;
+
+/* Линии */
+.menu-icon::before,
+.menu-icon::after,
+.menu-icon span {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+/* создаём среднюю линию через span */
+.menu-icon span {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* верхняя и нижняя */
+.menu-icon::before {
+  top: 0;
 }
 .menu-icon::after {
-    bottom: 0;
-    transition: bottom 0.3s, transform 0.3s 0.3s;
+  bottom: 0;
 }
-.menu-icon::before {
-    top: 0;
-    transition: top 0.3s, transform 0.3s 0.3s;
-}
-.menu-icon__line, .menu-icon::after, .menu-icon::before{
-    display: block;
-    width: 100%;
-    height: 3px;
-    background-color: #fff;
-}
-.menu-icon--active .menu-icon__line {
-    display: none;
+
+/* состояние крестика */
+.menu-icon--active::before {
+  transform: translateY(9px) rotate(45deg);
 }
 .menu-icon--active::after {
-    bottom: 50%;
-    transform: translateY(50%) rotate(45deg);
-    transition: bottom 0.3s, transform 0.3s 0.3s;
+  transform: translateY(-9px) rotate(-45deg);
+}
+.menu-icon--active span {
+  opacity: 0;
+}
 
-}
-.menu-icon--active::before {
-    transform: translateY(-50%) rotate(-45deg);
-    top: 50%;
-    transition: top 0.3s, transform 0.3s 0.3s;
-}
 /* --------
 WELCOME
 ---------- */
@@ -423,6 +434,22 @@ FOOTER
 @media (max-width: 500px) {
     .header__nav {
         display: none;
+    }
+    .menu-icon {
+        position: absolute;
+        display: block;
+        right: 20px;
+        top: 28px;
+    }
+    .header--mobile .header__nav {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .header--mobile .container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
     }
     .welcome__img {
         width: 240px;
