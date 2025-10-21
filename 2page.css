@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+/* --------
+Общие стили
+---------- */
+html {
+    scroll-behavior: smooth;
+}
+.container{
+    max-width: 1250px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 15px;
+}

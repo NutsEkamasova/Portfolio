@@ -3,7 +3,9 @@
 /* --------
 Общие стили
 ---------- */
-
+html {
+    scroll-behavior: smooth;
+}
 body {
     margin: 0;
 
@@ -68,6 +70,23 @@ background-repeat: no-repeat;
     color: #DEDEDE;
     margin-top: 0;
 }
+/* 2page общие стили */
+.text {
+    font-size: 32px;
+    letter-spacing: -0.5px;
+    color: #DEDEDE;
+    margin: 0;
+}
+.mini {
+font-weight: 700;
+font-size: 16px;
+letter-spacing: 1.5px;
+text-transform: uppercase;
+color: #DEDEDE;
+opacity: 0.7;
+margin: 0;
+}
+
 
 /* --------
 HEADER
@@ -418,21 +437,7 @@ FOOTER
 }
 
 @media (max-width: 650px) {
-    .projects__img {
-        width: 100%;
-        height: 360px;
-    }
-    .works__wrapper {
-        grid-template-columns: 1fr;
-        padding-top: 0px;
-    }
-    .work:nth-child(odd) {
-        top: 0;
-    }
-}
-
-@media (max-width: 500px) {
-    .header__nav {
+     .header__nav {
         display: none;
     }
     .menu-icon {
@@ -450,6 +455,20 @@ FOOTER
         flex-direction: column;
         align-items: flex-start;
         gap: 20px;
+    .projects__img {
+        width: 100%;
+        height: 360px;
+    }
+    .works__wrapper {
+        grid-template-columns: 1fr;
+        padding-top: 0px;
+    }
+    .work:nth-child(odd) {
+        top: 0;
+    }
+}
+
+@media (max-width: 500px) {
     }
     .welcome__img {
         width: 240px;
@@ -489,3 +508,135 @@ FOOTER
         font-size: 26px;
     }
 }
+
+/* 2page */
+.first {
+    background-image: url('../images/first.jpg');
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    height: 640px;
+    position: relative;
+}
+.first .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.first__title {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.19;
+    color: #DEDEDE;
+}
+
+/* Covibe */
+.covibe .container{
+    padding: 100px 0 200px 0;
+}
+.covibe__text {
+    width: 340px;
+    margin-top: 12px;
+}
+.covibe__details {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 110px;
+}
+.detail {
+    display: flex;
+    flex-direction: column;
+    min-width: 66px;
+}
+.detail__text {
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: #DEDEDE;
+}
+.detail__label {
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #DEDEDE;
+    opacity: 0.7;
+}
+
+
+/* PROBLEM */
+.problem__minititle {
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #DEDEDE;
+    opacity: 0.7;
+}
+.problem__text {
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: #DEDEDE;
+    margin-top: 12px;
+}
+
+/* LAUNCH */
+.launch {
+    margin-top: 90px;
+}
+.launch__img {
+    width: 100%;
+    height: 769px;
+    margin-top: 100px;
+}
+.launch_divider {
+
+}
+
+/* SOLUTION */
+.solution {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 200px 0;
+    gap: 270px;
+}
+.solution .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 130px;
+}
+.solution__text {
+    margin-top: 12px;
+    width: 612px;
+}
+
+/* Conclusion */
+.conclusion__text {
+    margin-top: 12px;
+}
+.conclusion__img {
+    width: 1248px;
+    margin-top: 128px;
+}
+.conclusion__nextcase {
+    margin-top: 200px;
+    margin-bottom: 150px;
+    display: flex;
+    justify-content: center;
+}
+.nextcase {
+    position: relative;
+    display: inline-block;
+    color: #DEDEDE;
+    font-weight: 700;
+    font-size: 32px;
+    letter-spacing: -0.5px;
+    border-bottom: 2px solid;
+}
+
+
